@@ -1,8 +1,14 @@
-import { model, Schema } from 'mongoose'
+import { model, Schema ,Types } from 'mongoose'
 
 //TODO: Add types for schema
+interface todo {
+    name: string;
+    description: string;
+    status:Boolean;
+    user: Types.ObjectId 
+  }
+  const todoSchema = new Schema<todo>({
 
-const todoSchema: Schema = new Schema({
     name: {
         type: String,
         required: true
